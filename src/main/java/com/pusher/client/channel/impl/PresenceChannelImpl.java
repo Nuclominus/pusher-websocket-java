@@ -114,6 +114,7 @@ public class PresenceChannelImpl extends PrivateChannelImpl implements PresenceC
 
         if (ids != null && !ids.isEmpty()) {
             // build the collection of Users
+            idToUserMap.clear();
             for (final String id : ids) {
                 final String userData = hash.get(id) != null ? GSON.toJson(hash.get(id)) : null;
                 final User user = new User(id, userData);
